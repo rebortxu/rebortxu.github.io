@@ -5,9 +5,9 @@
   <subtitle>the best of me</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
-  <updated>2019-07-25T17:57:44.092Z</updated>
-  <id>http://yoursite.com/</id>
+  <link href="https://rebortxu.github.io/"/>
+  <updated>2019-07-25T20:24:53.164Z</updated>
+  <id>https://rebortxu.github.io/</id>
   
   <author>
     <name>rebortxu</name>
@@ -17,35 +17,23 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>SpringBoot学习笔记（八）：SpringBoot启动端口+访问路、SpringBoot配置文件yml、SpringBoot多环境区分、SpringBoot打包发布</title>
-    <link href="http://yoursite.com/2019-01-02-15-08-46.html"/>
-    <id>http://yoursite.com/2019-01-02-15-08-46.html</id>
-    <published>2019-01-02T07:08:46.000Z</published>
-    <updated>2019-07-25T17:57:44.092Z</updated>
+    <title>test</title>
+    <link href="https://rebortxu.github.io/test.html"/>
+    <id>https://rebortxu.github.io/test.html</id>
+    <published>2019-07-25T20:09:56.000Z</published>
+    <updated>2019-07-25T20:24:53.164Z</updated>
     
-    <content type="html"><![CDATA[<!-- build time:Fri Jul 26 2019 02:00:01 GMT+0800 (GMT+08:00) --><h1 id="SpringBoot启动端口-访问路径"><a href="#SpringBoot启动端口-访问路径" class="headerlink" title="SpringBoot启动端口+访问路径"></a>SpringBoot启动端口+访问路径</h1><p>配置文件：<br></p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">server.port=<span class="number">9090</span></span><br><span class="line">server.context-path=<span class="regexp">/springboot</span></span><br></pre></td></tr></table></figure><p></p><p>现在只能用<a href="http://127.0.0.1:9090/springboot才能访问到项目" target="_blank" rel="noopener">http://127.0.0.1:9090/springboot才能访问到项目</a></p><h1 id="SpringBoot配置文件yml"><a href="#SpringBoot配置文件yml" class="headerlink" title="SpringBoot配置文件yml"></a>SpringBoot配置文件yml</h1><p>下面讲一下SpringBoot中另外一种格式的配置文件，名为application.yml的配置文件，这种配置文件更方便我们使用，有提示功能，而且SpringBoot也是默认去读取这个格式的配置文件，我们这里改变一下配置文件的风格。<br>原来的配置文件：<br></p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">server.port=<span class="number">9090</span></span><br><span class="line">server.context-path=<span class="regexp">/springboot</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">spring.datasource.url=jdbc:mysql:/</span><span class="regexp">/localhost:3306/</span>springboot_mjxy</span><br><span class="line">spring.datasource.username=root</span><br><span class="line">spring.datasource.password=admin</span><br><span class="line">spring.datasource.driver-<span class="class"><span class="keyword">class</span>-<span class="title">name</span></span>=com.mysql.jdbc.Driver</span><br><span class="line">#mybatis.mapper-locations=classpath:mapper/*.xml</span><br><span class="line">spring.thymeleaf.suffix=.html</span><br><span class="line">spring.thymeleaf.mode=HTML5</span><br><span class="line">spring.thymeleaf.encoding=UTF<span class="number">-8</span></span><br><span class="line">spring.thymeleaf.content-type=text/html</span><br><span class="line">name=majiaxueyuan</span><br></pre></td></tr></table></figure><p></p><p>下面我们把它改造成application.yml的风格，非常有层次感</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">server:</span><br><span class="line"> port: <span class="number">80</span></span><br><span class="line"> context-path: <span class="regexp">/springboot</span></span><br><span class="line"><span class="regexp">spring:</span></span><br><span class="line"><span class="regexp"> datasource:</span></span><br><span class="line"><span class="regexp">   username: root</span></span><br><span class="line"><span class="regexp">   password: admin</span></span><br><span class="line"><span class="regexp">   url: jdbc:mysql:/</span><span class="regexp">/localhost:3306/</span>springboot_mjxy?characterEncoding=utf8</span><br><span class="line"> thymeleaf:</span><br><span class="line">   cache: <span class="literal">false</span></span><br><span class="line">   mode: LEGACYHTML5</span><br><span class="line">   prefix: classpath:<span class="regexp">/templates/</span></span><br><span class="line">   suffix: .html</span><br></pre></td></tr></table></figure><p><img alt="在这里插入图片描述" data-original="../images/20190102150526605--x-oss-process=image-watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2RhdGFpeWFuZ3U=,size_16,color_FFFFFF,t_70.png"></p><p>如果没有高亮，请在eclipse中安装SpringToolsSuits。然后重启eclipse，选择打开方式就可以高亮了。</p><h1 id="SpringBoot多环境区分"><a href="#SpringBoot多环境区分" class="headerlink" title="SpringBoot多环境区分"></a>SpringBoot多环境区分</h1><p>我们可以创建多个配置文件，只需要在源配置文件上面增加下面的一个配置<br>spring:<br>profiles:<br>active: lx<br>这样系统就会优先去扫描配置文件是application-lx.yml的配置文件</p><h1 id="SpringBoot打包发布"><a href="#SpringBoot打包发布" class="headerlink" title="SpringBoot打包发布"></a>SpringBoot打包发布</h1><p>项目右键–&gt;Run As…–&gt;Maven Build…–&gt;goals–&gt;clean package<br>或者进入项目目录，命令行mvn clean package<br>如果报错没有主清单,在pom文件中新增下面代码<br></p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&lt;build&gt;</span><br><span class="line">&lt;plugins&gt;</span><br><span class="line">&lt;plugin&gt;</span><br><span class="line">&lt;groupId&gt;org.apache.maven.plugins&lt;<span class="regexp">/groupId&gt;</span></span><br><span class="line"><span class="regexp">&lt;artifactId&gt;maven-compiler-plugin&lt;/</span>artifactId&gt;</span><br><span class="line">&lt;configuration&gt;</span><br><span class="line">&lt;source&gt;<span class="number">1.8</span>&lt;<span class="regexp">/source&gt;</span></span><br><span class="line"><span class="regexp">&lt;target&gt;1.8&lt;/</span>target&gt;</span><br><span class="line">&lt;<span class="regexp">/configuration&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>plugin&gt;</span><br><span class="line">&lt;plugin&gt;</span><br><span class="line">&lt;groupId&gt;org.springframework.boot&lt;<span class="regexp">/groupId&gt;</span></span><br><span class="line"><span class="regexp">&lt;artifactId&gt;spring-boot-maven-plugin&lt;/</span>artifactId&gt;</span><br><span class="line">&lt;configuration&gt;</span><br><span class="line">&lt;maimClass&gt;com.majiaxueyuan.App&lt;<span class="regexp">/maimClass&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>configuration&gt;</span><br><span class="line">&lt;executions&gt;</span><br><span class="line">&lt;execution&gt;</span><br><span class="line">&lt;goals&gt;</span><br><span class="line">&lt;goal&gt;repackage&lt;<span class="regexp">/goal&gt;</span></span><br><span class="line"><span class="regexp">&lt;/g</span>oals&gt;</span><br><span class="line">&lt;<span class="regexp">/execution&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>executions&gt;</span><br><span class="line">&lt;<span class="regexp">/plugin&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>plugins&gt;</span><br><span class="line">&lt;<span class="regexp">/build&gt;</span></span><br></pre></td></tr></table></figure><p></p><!-- rebuild by neat -->]]></content>
+    <content type="html"><![CDATA[<!-- build time:Fri Jul 26 2019 04:33:08 GMT+0800 (GMT+08:00) --><p>ddddddddddddddddddddddddd</p><!-- rebuild by neat -->]]></content>
     
     <summary type="html">
     
       
       
-        &lt;!-- build time:Fri Jul 26 2019 02:00:01 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;SpringBoot启动端口-访问路径&quot;&gt;&lt;a href=&quot;#SpringBoot启动端口-访问路径&quot; class=&quot;headerli
+        &lt;!-- build time:Fri Jul 26 2019 04:33:08 GMT+0800 (GMT+08:00) --&gt;&lt;p&gt;ddddddddddddddddddddddddd&lt;/p&gt;&lt;!-- rebuild by neat --&gt;
       
     
     </summary>
     
-      <category term="a" scheme="http://yoursite.com/categories/a/"/>
-    
-      <category term="b" scheme="http://yoursite.com/categories/a/b/"/>
-    
-      <category term="c" scheme="http://yoursite.com/categories/a/b/c/"/>
-    
-    
-      <category term="a" scheme="http://yoursite.com/tags/a/"/>
-    
-      <category term="b" scheme="http://yoursite.com/tags/b/"/>
-    
-      <category term="c" scheme="http://yoursite.com/tags/c/"/>
     
   </entry>
   
